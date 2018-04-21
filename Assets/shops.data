@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Shop_database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <shops>
+    <Shop>
+      <name>seller</name>
+      <items>
+        <Item>
+          <name>name</name>
+          <amount>1</amount>
+          <price>1000</price>
+          <nutrition>100</nutrition>
+          <warm>101</warm>
+          <happiness>102</happiness>
+          <info>Something</info>
+        </Item>
+      </items>
+    </Shop>
+  </shops>
+</Shop_database>
