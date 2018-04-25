@@ -7,44 +7,44 @@ using System;
 using System.Xml;
 using System.Xml.Serialization;
 
-public class Shop_database {
-    public static Shop_database data
+public class Storage_database {
+    public static Storage_database data
     {
         get
         {
             if(instance == null)
             {
-                instance = new Shop_database();
+                instance = new Storage_database();
                 load_shops();
             }
             return instance;
         }
     }
-    private static Shop_database instance;
+    private static Storage_database instance;
 
 
-    public  Shop[] shops;
+    public  Storage[] shops;
 
     public static void load_shops()
     {
-        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Shop_database));
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Storage_database));
         FileStream filestream = new FileStream(Application.dataPath + "/shops.data", FileMode.Open);
-        instance = xmlSerializer.Deserialize(filestream) as Shop_database;
+        instance = xmlSerializer.Deserialize(filestream) as Storage_database;
 
         Debug.Log("loaded");
         Debug.Log(instance.shops[0].name);
     }
     public static void save_shops()
     {
-        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Shop_database));
+        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Storage_database));
         FileStream filestream = new FileStream(Application.dataPath + "/shops.data", FileMode.Create);
         xmlSerializer.Serialize(filestream, instance);
         filestream.Close();
     }
 
-    public Shop GetShop(string name)
+    public Storage GetStorage(string name)
     {
-        foreach (Shop shop in shops)
+        foreach (Storage shop in shops)
         {
             if (shop.name == name)
             {

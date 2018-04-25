@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop  {
+public class Storage  {
     public string name;
     public Item[] items;
 

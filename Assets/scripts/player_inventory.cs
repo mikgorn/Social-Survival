@@ -45,7 +45,11 @@ public class player_inventory : MonoBehaviour {
         if (money >= item.price)
         {
             money -= item.price;
-            item.amount = 10;
+            if (item.amount == 0)
+            {
+                
+            item.amount = 1;
+            }
             add_item(item);
         }
         refresh_inventory();
